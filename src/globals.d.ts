@@ -1,4 +1,3 @@
-declare const Notification: any
 declare const System: any
 declare module 'connect-history-api-fallback'
 declare module 'chart.js/dist/Chart'
