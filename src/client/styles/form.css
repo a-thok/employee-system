@@ -1,0 +1,201 @@
+/* FORM GROUP */
+.form-group {
+  --margin: 1.5em;
+
+  border: 0;
+}
+
+.form-group:not(:first-of-type) {
+  margin-top: var(--margin);
+}
+
+.form-group:not(:last-child) {
+  margin-bottom: var(--margin);
+}
+
+.form-group.inline {
+  display: flex;
+  align-items: center;
+}
+
+.form-group.inline > label:not(.radio):not(.checkbox) {
+  flex-basis: 8rem;
+  padding-right: 1em;
+  margin: 0;
+  text-align: right;
+}
+
+.form-group.inline > input {
+  flex: 1;
+}
+
+
+/* LABEL & TIP */
+.form-group > label:not(.radio):not(.checkbox),
+.form-group > legend {
+  font-size: .875em;
+  color: var(--fade);
+}
+
+.form-group > small {
+  display: inline-block;
+  padding: .2em 0 0 .25em;
+  margin-bottom: -.4em;
+  color: var(--fade);
+  font-size: .75em;
+}
+
+
+/* NORAML INPUT & TEXTAREA */
+.input {
+  padding: .5em 1em;
+  border: 1px solid var(--fade-light);
+  border-radius: .25em;
+  color: inherit;
+  outline: 0;
+}
+
+.input.block {
+  display: block;
+  width: 100%;
+  padding-top: .65em;
+  padding-bottom: .65em;
+}
+
+.input:focus {
+  border-color: var(--form-color);
+  box-shadow: 0 0 5px rgba(44, 151, 222, .2);
+}
+
+.input.danger {
+  border-color: var(--danger-light);
+}
+
+.input.warning {
+  border-color: var(--warning-light);
+}
+
+.input.success {
+
+  border-color: var(--success-light);
+}
+
+.input::-placeholder {
+  transition: color .2s;
+}
+
+.input:not(:focus)::placeholder {
+  color: var(--fade);
+}
+
+
+/* SELECT */
+@supports (-moz-appearance: none) or (-webkit-appearance: none) {
+  select.input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .select {
+    position: relative;
+  }
+
+  .select::before,
+  .select::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 3px;
+    background: var(--form-color);
+    transition: transform .3s;
+  }
+
+  .select::before {
+    right: 22px;
+    transform: rotate(45deg);
+  }
+
+  .select::after {
+    right: 16px;
+    transform: rotate(-45deg)
+  }
+}
+
+
+/***
+  RADIO & CHECKBOX
+***/
+.radio,
+.checkbox {
+  display: inline-block;
+}
+
+.radio:not(:first-of-type),
+.checkbox:not(:first-of-type) {
+  margin-left: 1.6em;
+}
+
+.radio > input,
+.checkbox > input {
+  display: none;
+}
+
+.radio > span,
+.checkbox > span {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.6em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.radio > span::before,
+.radio> span::after,
+.checkbox > span::before,
+.checkbox > span::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  display: block;
+  width: calc(var(--line-height) * .8em);
+  height: calc(var(--line-height) * .8em);
+  margin-top: calc(var(--line-height) * .1em);
+  border-radius: 50%;
+}
+
+.checkbox > span::before,
+.checkbox > span::after {
+  border-radius: .25em;
+}
+
+.radio > span::before,
+.checkbox > span::before {
+  border: 1px solid #cfd9db;
+  background: #fff;
+}
+
+.radio > :checked + span::after,
+.checkbox > :checked + span::after {
+  background-color: var(--form-color);
+  background-size: 100% 100%;
+  box-shadow: 0 0 5px rgba(44, 151, 222, .4);
+  animation: bounce-in .3s;
+}
+
+.radio > :checked + span::after {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDE2IDE2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNiAxNiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxjaXJjbGUgZmlsbD0iI0ZGRkZGRiIgY3g9IjgiIGN5PSI4IiByPSIzIi8+Cjwvc3ZnPg==")
+}
+
+.checkbox > :checked + span::after {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDE2IDE2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNiAxNiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludHM9IjUsOCA3LDEwIDExLDYgIi8+Cjwvc3ZnPg==");
+}
+
+@keyframes bounce-in {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}

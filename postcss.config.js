@@ -1,0 +1,39 @@
+const autoprefixer = require('autoprefixer');
+const postcssVariables = require('postcss-css-variables');
+
+module.exports = {
+  plugins: [
+    postcssVariables({
+      variables: {
+        '--primary': '#5f8ee4',
+        '--primary-light': '#759de8',
+        '--primary-dark': '#497fe0',
+
+        '--success': '#6fce72',
+        '--success-light': '#82d485',
+
+        '--warning': '#f39c12',
+        '--warning-light': '#f5ae3d',
+        '--warning-dark':  '#e67e22',
+
+        '--danger': '#e4655f',
+        '--danger-light': '#e87a75',
+        '--danger-dark': '#e05049',
+
+        '--fade': '#8f9cb5',
+        '--fade-light': '#e6e6e6',
+        '--fade-dark': '#4d5158',
+
+        '--form-color': '#2c97de',
+
+        '--backdrop-color': 'rgba(52, 54, 66, .7)',
+
+        '--black': '#373a3c',
+        '--line-height': '1.45',
+
+        '--header-height': '3rem',
+      },
+    }),
+    autoprefixer(),
+  ],
+};

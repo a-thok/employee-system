@@ -1,0 +1,93 @@
+.btn {
+  padding: .4em 1.5em;
+  border: 0;
+  border-radius: .25em;
+  background: currentColor;
+  cursor: pointer;
+}
+
+/* BLOCK */
+.btn.block {
+  display: block;
+  width: 100%;
+  padding-top: .8em;
+  padding-bottom: .8em;
+}
+
+/* NORMAL */
+.btn:not(.outline) {
+  transition: opacity .2s;
+}
+
+.btn:not(.outline):hover {
+  opacity: .85;
+}
+
+.btn:not(.outline):not(.default)::first-line {
+  color: #fff;
+}
+
+/* OUTLINE */
+.btn.outline {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+
+.btn.outline:hover {
+  opacity: .99;
+  background: currentColor;
+}
+
+.btn.outline:hover::first-line {
+  color: #fff;
+}
+
+/* COLOURs */
+.btn.default {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #ccc;
+}
+
+.btn.default:hover {
+  background: var(--fade-light);
+}
+
+.btn.primary {
+  color: var(--primary);
+}
+
+.btn.success {
+  color: var(--success);
+}
+
+.btn.warning {
+  color: var(--warning);
+}
+
+.btn.danger {
+  color: var(--danger);
+}
+
+
+/* GROUP */
+.btn-group {
+  display: inline-block;
+}
+
+.btn-group .btn:not(:first-child) {
+  margin-left: -1px;
+}
+
+.btn-group .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

@@ -1,0 +1,25 @@
+.alert {
+  --size: 2.5rem;
+
+  height: var(--size);
+  padding: 0 1em;
+  border-radius: .25em;
+  /*margin: 1em 0;*/
+  opacity: .9;
+  color: #fff;
+  line-height: var(--size);
+  transition: all .3s;
+}
+
+.alert.hidden {
+  opacity: 0;
+  height: 0;
+}
+
+.alert.danger {
+  background: var(--danger-light);
+}
+
+.alert.success {
+  background: var(--success);
+}
