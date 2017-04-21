@@ -1,5 +1,5 @@
-import * as Vue from 'vue';
-import * as  Router from 'vue-router';
+import Vue from 'vue';
+import Router from 'vue-router';
 import * as Cookies from 'js-cookie';
 
 import AccountView from '../views/Account.vue';

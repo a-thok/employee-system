@@ -1,4 +1,4 @@
-import * as Vue from 'vue';
+import Vue from 'vue';
 import Component from 'vue-class-component';
 import * as marked from 'marked';
 import * as addDays from 'date-fns/add_days';

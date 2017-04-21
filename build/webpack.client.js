@@ -24,7 +24,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, '../dist/public'),
+    path: path.resolve('dist/public'),
     publicPath: '/',
     filename: isProd ? 'js/[name].[chunkhash].js' : 'js/[name].js',
   },
@@ -39,17 +39,22 @@ module.exports = {
       {
         test: /\.ts$/,
         loader: 'vue-ts-loader',
-        options: {
-          compilerOptions: {
-            module: 'es2015',
-            target: 'es5',
-          },
-        },
       },
       Object.assign({
         test: /\.css$/,
       }, isProd ? {
-        loader: ExtractTextPlugin.extract('css-loader?sourceMap!postcss-loader'),
+        loader: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+              }
+            },
+            'postcss-loader',
+          ],
+          fallback: 'style-loader',
+        }),
       } : {
         use: [
           'style-loader',
@@ -76,7 +81,7 @@ module.exports = {
     extensions: ['.js', '.ts'],
   },
 
-  devtool: isProd ? 'source-map' : 'eval-source-map',
+  devtool: isProd ? 'source-map' : 'cheap-module-eval-source-map',
 
   plugins: [
     new webpack.DefinePlugin({

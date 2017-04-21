@@ -9,8 +9,8 @@ module.exports = {
     js:  'vue-ts-loader',
   }, isProd ? {
     css: ExtractTextPlugin.extract({
-      loader: 'css-loader',
-      fallbackLoader: 'vue-style-loader',
+      use: ['css-loader'],
+      fallback: 'vue-style-loader',
     }),
   } : {}),
   esModule: true,

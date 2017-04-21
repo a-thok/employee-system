@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/server/main.ts',
 
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve('dist'),
     filename: 'server.js',
     libraryTarget: 'commonjs2',
   },

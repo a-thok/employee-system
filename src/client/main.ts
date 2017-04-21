@@ -1,5 +1,5 @@
 /* tslint:disable no-unused-new */
-import * as Vue from 'vue';
+import Vue from 'vue';
 import { router } from './router';
 import AppContainer from './App.vue';
 import { ImageBrowserComponent, LoadingComponent, ModalComponent, PagerComponent } from './components';
@@ -30,7 +30,7 @@ if ('Notification' in window) {
     });
   };
 
-  const { permission } = Notification;
+  const { permission } = Notification as any;
   if (permission === 'granted') {
     notify();
   } else if (permission !== 'denied') {
